@@ -124,13 +124,13 @@ public class SfcDriverCaller {
       // SfcDict sfcData = (SfcDict) SFCdata_counter.getValue();
       log.debug("[Adding SFs  for Chain : ]  " + sfcData.getName());
 
-      Map<Integer, VNFdict> VNFs = sfcData.getPaths().get(0).getPath_SFs();
+      Map<Integer, VNFdict> VNFs = sfcData.getPaths().get(0).getPath_SFs();  // Gets SFs in that path for the SFC
       Iterator count = VNFs.entrySet().iterator();
       while (count.hasNext()) {
 
         Map.Entry VNFcounter = (Map.Entry) count.next();
 
-        if (getFaildVNFname(vnfr) != null) {
+        if (getFaildVNFname(vnfr) != null) {  // Checks whether vnfr is failed or not
           // List<VNFdict> vnfs_list = new ArrayList<>();
 
           log.debug(
